@@ -1,11 +1,13 @@
 import React,{useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../css/bloghome.css'
+import Navigation from '../navigation'
+import Blog from './Blog'
 
 
 const Homeblog = ()=> {   
 const[blogs,setblogs] = useState([{
     title:'',
-    
     description:'',
     username:''
 }])
@@ -26,9 +28,13 @@ useEffect(()=>{
     });
 },[])
 
-
+    const navigate = useNavigate();
+    const handleEdit = (e) =>{
+        navigate(`/view-blog/${blogs._id}`)
+    }
     return (
     <div>
+        <Navigation/>
      
     <div class="home-container">
         
@@ -44,12 +50,14 @@ useEffect(()=>{
              
             <div class="blogs-wrapper">
             {(blogs || []).map(blog=>(
+
+                
                 <div class="blog-box-style">
-                    <a class="blog-box-link" href="/view-blog">
-                    <input type="hidden" name="id" value={blog} key={blog.title} />
+                    <a class="blog-box-link" href={`/view-blog/${blog._id}`}>
+                    <input type="hidden"  value={blog._id} key={blog._id} id={blog._id} />
                     
                     <div class="blog-box-heading">
-                        <h1>{blog.title}</h1>
+                        <h2>{blog.title}</h2>
                     </div>
                     <div class="blog-box-desc">
                         <p>
@@ -68,6 +76,9 @@ useEffect(()=>{
                         <span class="box-btn"><i class="fas fa-trash-alt fa-lg"></i></span>
                     </a>      
                     </div>
+
+                    
+
                 </div> 
                 ))}         
             </div>

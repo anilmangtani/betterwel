@@ -5,18 +5,12 @@ let userSchema = require('../model/usermodel');
 let blogSchema = require('../model/blogmodel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-// const multer = require('multer');
-// const storage = multer.diskStorage({
-//     destination:(req,file, cb)=>{
-//         cb(null, 'Images')
-//     },
-//     filename:(req,file,cb)=>{
-//         console.log(file);
-//         cb(null, Data.now() +path.extname(file.originalname))
-//     }
-// })
+const Anxdoc = require('../model/doctorsmodel')
+const Bipol = require('../model/bipolarmodel')
+const Depdoc = require('../model/depdocmodel');
+const Ocddoc =require('../model/ocddocmodel')
 
-// const upload = multer({storage:storage})
+
 
 route.get('/',(req,res)=>{
     res.send("")
@@ -61,7 +55,7 @@ route.post('/api/login', async (req, res)=>{
         email:req.body.email,
         password:req.body.password
     })
-
+    console.log(user);
     if(user){
         const token = jwt.sign({
             name: user.name,
@@ -69,7 +63,7 @@ route.post('/api/login', async (req, res)=>{
         },
         'secret123')
         
-        return res.json({status:'ok', user:user}).render('/')
+        return res.json({status:'ok', user:user})
         
     }else{
        return res.send('<h1>error</h1>')
@@ -145,10 +139,43 @@ route.get('/api/blogs',(req,res)=>{
         .then(foundblogs => res.json(foundblogs))
 })
 
+route.get('/api/anxdoc',(req,res)=>{
+    Anxdoc.find()
+        .then(founddoc=>res.json(founddoc));
+})
 
-route.post('/uploads',(req,res)=>{
+route.get('/api/bidoc',(req,res)=>{
+    Bipol.find()
+        .then(founddoc=>res.json(founddoc));
+})
+
+route.get('/api/depdoc',(req,res)=>{
+    Depdoc.find()
+        .then(founddoc=>res.json(founddoc));
+})
+
+route.get('/api/ocddoc',(req,res)=>{
+    Ocddoc.find()
+        .then(founddoc=>res.json(founddoc));
+})
 
 
+route.get("/view-blog/:id", async (req, res)=>{
+    const id = req.params.id;
+    console.log(id)
+    let blog;
+    try {
+        blog = await blogSchema.findById(req.params.id);
+        console.log(blog)
+    } catch (error) {
+        console.log(error)
+    }
+
+    if(!blog){
+        return res.status(404).json({message: "No blog Found"})
+    }
+
+    return res.status(200).json({blog})
 })
 
 module.exports = route

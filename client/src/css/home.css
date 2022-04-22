@@ -197,3 +197,16 @@
 .footer h3{
     color: wheat;
 }
+
+
+@media (max-width:500px) {  
+    .home-wrapper{
+        width: 100%;
+    }    
+    /* .Thirdsec{
+        display: none;
+    }
+    .fs-wrapper{
+        display: none;
+    } */
+}

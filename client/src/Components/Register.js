@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import '../css/register.css'
-
+import Navigation from './navigation';
 const Register =()=> {
     const[name, setname] = useState('');
     const[email, setemail] = useState('');
@@ -29,6 +29,7 @@ const Register =()=> {
 
   return (
     <div className='register'>
+      <Navigation/>
 
       <div className="reg-form">
 

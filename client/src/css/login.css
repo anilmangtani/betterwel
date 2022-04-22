@@ -8,8 +8,8 @@
     height: 70vh;
     width: 40%;
     margin: auto;
-    background-color: rgba(128, 128, 128, 0.371);
-
+    background:url('https://media.giphy.com/media/NPP4Z7wMIf0SA/giphy.gif');
+    background-size: cover;
 }
 
 h1{

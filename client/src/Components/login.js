@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
-import '../css/login.css'
+import '../css/register.css'
+import Navigation from './navigation';
+// import '../css/login.css'
 
 const Login =()=> {
     const[email, setemail] = useState('');
@@ -22,11 +24,12 @@ const Login =()=> {
 
         if(data.user){ 
             console.log(data.user);
-            localStorage.setItem("name", data.user.name);
-         
-            alert('login successful');
-            alert(localStorage.getItem("name"));
-            //window.location.href='/';
+            localStorage.setItem('name',data.user.name);
+            // localStorage.setItem('email',data.user.email);
+            // localStorage.setItem('phone',data.user.phone);
+            // localStorage.setItem('password',data.user.password);
+            // localStorage.setItem('_id',data.user._id);
+            window.location.href = '/';
         }
 
 
@@ -39,12 +42,10 @@ const Login =()=> {
 
   return (
     <div className='register'>
-
-    <div className="login-form">
-        <div className="login-form-flex">
-    <h1>Login</h1>
-        <form onSubmit={userLogin}>
-        
+        <Navigation />
+    
+        <form className='reg-form' onSubmit={userLogin}>
+        <h1>Login</h1>
         <input
         value={email}
         onChange={(e)=> setemail(e.target.value)}
@@ -62,8 +63,8 @@ const Login =()=> {
         <input type="submit" value="Register" className='button' />
         </form>    
     </div>    
-    </div>
-    </div>
+    
+    // </div>
   )
 }
 

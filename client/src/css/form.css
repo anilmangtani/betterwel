@@ -3,10 +3,9 @@
 .new_blog_container{
     position: relative;
     height: 100vh;
-    background:rgb(84, 195, 238);
+    background:url('https://media.giphy.com/media/5xtDarsUgCwZMXqcVQA/giphy.gif');
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
 .form-container{
@@ -49,8 +48,9 @@ input, label {
     display:block;
 }
 label{
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'Acme', sans-serif;
+    color: wheat
 }
 
 .form-button{

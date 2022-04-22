@@ -12,6 +12,7 @@ import Blog from './Components/Blogs/Blog';
 import Newblog from './Components/Blogs/Newblog';
 import Homeblog from './Components/Blogs/Homeblog';
 import Register from './Components/Register';
+import Findsupport from './Components/Findsupport/Findsup';
 
 
 
@@ -19,14 +20,16 @@ function App() {
   return (
     <div>
     <BrowserRouter>
-    
-    {/* <Navigation/>    */}
+{/*     
+    <Navigation/>    */}
     <Routes>
       <Route exact path='/' element={<Mainhome/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/write-blogs' element={<Newblog/>}/>
+      <Route path='/find-support' element={<Findsupport/>}/>
       <Route path='/view-blogs' element={<Homeblog/>}/>
+      <Route path='/view-blog/:id' element={<Blog/>}/>
       <Route path='/register' element={<Register/>}/>
     </Routes>
     <Footer/>

@@ -17,7 +17,7 @@ const Fourthsec = () => {
           <div className="fs-two-cntn1">
               <h1>BetterWellness Moto</h1>
               <em>To Make The World A Better Place.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima porro nulla exercitationem id quam, aliquid doloribus commodi eum ab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos sapiente pariatur, beatae placeat adipisci in voluptatibus officiis? Quisquam, delectus eum!
+              We have assembled and created unique Mental Health Slogans for your campaigns. These mental health slogans will surely inspire thousand to take better care of their and their loved one’s mental health through you
               </em>
           </div>
           <div className="fs-two-cntn2">

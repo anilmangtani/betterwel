@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //title blogs image createdAt
 
-const DocSchema = new mongoose.Schema({
+const Depdocschema = new mongoose.Schema({
     name:{
         type:String,
         required: true
@@ -26,4 +26,4 @@ const DocSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('anxdocs',DocSchema);
+module.exports = mongoose.model('depdocs',Depdocschema);
