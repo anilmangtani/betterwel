@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import '../css/register.css'
+import Navigation from './navigation';
 
 const Login =()=> {
     const[email, setemail] = useState('');
@@ -22,11 +23,12 @@ const Login =()=> {
 
         if(data.user){ 
             console.log(data.user);
-            localStorage.setItem("name", data.user.name);
-         
-            // alert('login successful');
-            alert(localStorage.getItem("name"));
-            window.location.href='/';
+            localStorage.setItem('name',data.user.name);
+            // localStorage.setItem('email',data.user.email);
+            // localStorage.setItem('phone',data.user.phone);
+            // localStorage.setItem('password',data.user.password);
+            // localStorage.setItem('_id',data.user._id);
+            window.location.href = '/';
         }
 
 
@@ -39,7 +41,7 @@ const Login =()=> {
 
   return (
     <div className='register'>
-
+        <Navigation />
     <h1>Login</h1>
     <form onSubmit={userLogin}>
         

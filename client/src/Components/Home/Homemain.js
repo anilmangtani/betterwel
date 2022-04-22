@@ -1,4 +1,5 @@
 import React from "react";
+import Navigation from "../navigation";
 import Fourthsec from "./Fourthsec";
 import Home from "./Home";
 import Secpage from "./secpage";
@@ -8,6 +9,7 @@ const Mainhome = () =>{
  
     return(
         <div>
+            <Navigation />
             <Home/>
             <Secpage/>
             <Thirdsec/>

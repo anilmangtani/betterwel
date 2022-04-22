@@ -3,7 +3,14 @@ import '../css/navigation.css';
 import { Link } from 'react-router-dom';
 const Navigation = () =>{
     console.log(localStorage.getItem("name"))
-    
+    const removeLocalStorage = () =>{
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        localStorage.removeItem("phone");
+        localStorage.removeItem("password");
+        localStorage.removeItem("_id");
+        window.location.href = '/';
+    }
     return(
         
         <div className='navigation-bar'>
@@ -23,9 +30,10 @@ const Navigation = () =>{
                            
                            
                            
-                           {localStorage.getItem("name") ? <li  onClick={localStorage.removeItem("name")}> <Link to="/logout">Logout</Link> </li>
-                           : <li><Link to="/login">Login</Link> </li> 
-                            }
+                           {localStorage.getItem("name") ?
+                           <li onClick={removeLocalStorage}> Logout</li>
+                           : 
+                           <li> <Link to="/login">Login</Link> </li>}
 
                             <li><Link to='/register'>Register</Link></li>
 
