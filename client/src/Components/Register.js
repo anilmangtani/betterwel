@@ -30,8 +30,10 @@ const Register =()=> {
   return (
     <div className='register'>
 
+      <div className="reg-form">
+
     <h1>Register</h1>
-    <form onSubmit={userRegister}>
+      <form onSubmit={userRegister}>
         <input
         value={name}
         onChange={(e)=> setname(e.target.value)}
@@ -58,9 +60,9 @@ const Register =()=> {
         type="password" name="password" id="" 
         placeholder='password'/>
         <br />
-        <input type="submit" value="Register" />
-    </form>    
-        
+        <input type="submit" value="Register" className='red-btn'/>
+      </form>    
+    </div>    
     </div>
   )
 }

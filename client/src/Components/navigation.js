@@ -24,10 +24,10 @@ const Navigation = () =>{
                            
                            
                            {localStorage.getItem("name") ? <li  onClick={localStorage.removeItem("name")}> <Link to="/logout">Logout</Link> </li>
-                           : <li><Link to="/login">Login</Link> </li> 
+                           : <li><Link to="/login">Login</Link> <Link to='/register'>Register</Link></li> 
                             }
 
-                            <li><Link to='/register'>Register</Link></li>
+                            {/* <li></li> */}
 
                            {/* <li> <Link to="/login">Login</Link> </li>
                            <li> <Link to="/register">Signup</Link> </li> */}

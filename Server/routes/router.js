@@ -69,7 +69,7 @@ route.post('/api/login', async (req, res)=>{
         },
         'secret123')
         
-        return res.json({status:'ok', token:token}).redirect('/') 
+        return res.json({status:'ok', user:user}).render('/')
         
     }else{
        return res.send('<h1>error</h1>')

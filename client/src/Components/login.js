@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import '../css/register.css'
+import '../css/login.css'
 
 const Login =()=> {
     const[email, setemail] = useState('');
@@ -24,9 +24,9 @@ const Login =()=> {
             console.log(data.user);
             localStorage.setItem("name", data.user.name);
          
-            // alert('login successful');
+            alert('login successful');
             alert(localStorage.getItem("name"));
-            window.location.href='/';
+            //window.location.href='/';
         }
 
 
@@ -40,8 +40,10 @@ const Login =()=> {
   return (
     <div className='register'>
 
+    <div className="login-form">
+        <div className="login-form-flex">
     <h1>Login</h1>
-    <form onSubmit={userLogin}>
+        <form onSubmit={userLogin}>
         
         <input
         value={email}
@@ -57,9 +59,10 @@ const Login =()=> {
         type="password" name="password" id="" 
         placeholder='password'/>
         <br />
-        <input type="submit" value="Register" />
-    </form>    
-        
+        <input type="submit" value="Register" className='button' />
+        </form>    
+    </div>    
+    </div>
     </div>
   )
 }
